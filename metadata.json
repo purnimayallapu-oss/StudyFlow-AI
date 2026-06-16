@@ -1,0 +1,6 @@
+{
+  "name": "StudyFlow AI",
+  "description": "Adaptive EdTech study scheduler, interactive micro-challenges, knowledge quizzes, and intelligent revision coaching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

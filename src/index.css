@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+
+  /* Theme variables mapped to Tailwind v4 theme colors */
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
+  --color-slate-200: var(--slate-200);
+  --color-slate-300: var(--slate-300);
+  --color-slate-400: var(--slate-400);
+  --color-slate-500: var(--slate-500);
+  --color-slate-600: var(--slate-600);
+  --color-slate-700: var(--slate-700);
+  --color-slate-800: var(--slate-800);
+  --color-slate-850: var(--slate-850);
+  --color-slate-900: var(--slate-900);
+  --color-slate-910: var(--slate-910);
+  --color-slate-950: var(--slate-950);
+  --color-slate-955: var(--slate-955);
+}
+
+:root {
+  /* Dark Mode Default Values - pristine high contrast neon workspace */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-850: #182235;
+  --slate-900: #0f172a;
+  --slate-910: #0d1323;
+  --slate-950: #020617;
+  --slate-955: #01040f;
+  
+  --chart-grid: #1e293b;
+  --chart-bar: #6366f1;
+  --chart-area: rgba(99, 102, 241, 0.2);
+  --chart-text: #94a3b8;
+}
+
+.light {
+  /* Light Mode Values - beautiful modern crisp layout */
+  --slate-50: #0f172a;        /* mapped text very dark for headers */
+  --slate-100: #1e293b;       /* body text */
+  --slate-200: #334155;       /* secondary text */
+  --slate-300: #475569;       /* description text */
+  --slate-400: #64748b;       /* light gray text */
+  --slate-500: #94a3b8;       /* lighter text */
+  --slate-600: #cbd5e1;       /* very faint text */
+  --slate-700: #cbd5e1;       /* borders heavy */
+  --slate-800: #cbd5e1;       /* standard borders */
+  --slate-850: #f1f5f9;       /* background / table dividers */
+  --slate-900: #ffffff;       /* cards bg */
+  --slate-910: #f8fafc;       /* sidebar etc */
+  --slate-950: #f8fafc;       /* main page bg */
+  --slate-955: #f1f5f9;       /* alternate backgrounds */
+
+  --chart-grid: #e2e8f0;
+  --chart-bar: #4f46e5;
+  --chart-area: rgba(79, 70, 229, 0.1);
+  --chart-text: #475569;
+}
+
+/* Global Transition Rules for elegant theme toggle fading */
+*, *::before, *::after {
+  transition-property: background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--slate-950);
+  color: var(--slate-100);
+  font-family: var(--font-sans);
+}
+
+/* Fix any high-level text contrast issues in Light Mode */
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+  color: var(--slate-50) !important;
+}
+
+/* Smooth form elements transition styles */
+input, select, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+.light input:focus, .light select:focus, .light textarea:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Ensure text elements styled with plain white text are readable in Light Mode */
+.light .text-white:not(button *):not(.bg-indigo-600 *):not(.bg-indigo-500 *):not(.bg-green-600 *):not(.bg-emerald-500 *):not(.bg-emerald-600 *):not(.bg-red-500 *):not(.bg-red-600 *):not(.bg-purple-600 *):not(.bg-amber-500 *):not(.bg-amber-600 *):not(.bg-yellow-500 *):not(.bg-gradient-to-br *):not(.bg-gradient-to-tr *):not(.bg-indigo-700 *):not(.bg-purple-500 *):not(header *) {
+  color: var(--slate-50) !important;
+}
+
+.light .text-slate-100 {
+  color: var(--slate-100) !important;
+}
+
+.light .text-slate-205, .light .text-slate-200 {
+  color: var(--slate-200) !important;
+}
+
+.light .text-slate-105 {
+  color: var(--slate-50) !important;
+}
+
+/* Recharts Custom Tooltip overrides inside Light Mode */
+.light .recharts-default-tooltip {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.light .bg-indigo-605\/10, .light .bg-indigo-600\/10 {
+  background-color: rgba(79, 70, 229, 0.1) !important;
+}
+
+.light .bg-slate-950\/80 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
